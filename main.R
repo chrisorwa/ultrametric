@@ -4,7 +4,7 @@ source('Text_Processing.R')
 source('distances.R')
 
 #load data
-tweets <-read.csv(file = 'gikomba.csv',stringsAsFactors = FALSE,nrows = 20)
+tweets <-read.csv(file = file.choose(),stringsAsFactors = FALSE,nrows = 20)
 
 #==================== Create Ultrametric Matrix ===================================================
 
