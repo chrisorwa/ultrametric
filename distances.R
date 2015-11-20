@@ -2,7 +2,10 @@
 #load library
 library(stringdist)
 
-#create function for calculating ultrametric distance
+#settings
+MAX = 1000000
+
+#calculate ultrametric distance
 ultrametric <-function(a,b,c){
 
   #calculate ultrametric distance
@@ -12,4 +15,16 @@ ultrametric <-function(a,b,c){
   
   compute = list(round(x*MAX,4),round(y*MAX,4),round(z*MAX,4))
   return(list(compute))
+}
+
+#modified function for calculating ultrametric distance
+mod_ultrametric <-function(a,b){
+  #split sentence to words
+  a = strsplit(a,split = "")[[1]]
+  b = strsplit(b,split = "")[[1]]
+  
+  #calculate ultrametric distance
+  x = 2^-(length(intersect(a,b))+1)
+  compute = round(x*MAX,2)
+  return(compute)
 }
