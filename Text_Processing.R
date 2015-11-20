@@ -26,6 +26,6 @@ process_text <-function(text){
   text = stripWhitespace(text)
   text = strsplit(removeWords(as.character(text),stopwords('SMART')),split =" ")
   text = as.character(unlist(text))
-  #text = remove_blanks(text)
+  text = remove_blanks(text)
   return(as.vector(text))   
 }
