@@ -1,9 +1,7 @@
 
 #load library
-library(tm)
+library(stringdist)
 
-#settings
-MAX = 1000000
 #create function for calculating ultrametric distance
 ultrametric <-function(a,b,c){
 
